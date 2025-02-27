@@ -4,6 +4,10 @@ public class Pirate extends Machine {
 
     private String syms = "♈✋⛵";
 
+    public Pirate(String name, double house, double payout){
+        super(name,house,payout);
+    }
+
     public boolean win(){
 
         System.out.print("Machine:   ");
@@ -36,8 +40,8 @@ public class Pirate extends Machine {
     }
 
     public static void main(String[] args){
-        Pirate p = new Pirate();
-        p.win(1.5);
+        Pirate p = new Pirate(" ", 0.0, 2.0);
+        p.win();
     }
 
 }
