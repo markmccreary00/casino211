@@ -4,11 +4,11 @@ public class Lab08{
 
   public static void main(String[] args){
     Machine[] m = new Machine[5];
-    m[0] = new Machine();
-    m[1] = new Machine();
-    m[2] = new Machine();
-    m[3] = new Machine();
-    m[4] = new Machine();
+    m[0] = new Machine("Yoda", 0.1, 0.1);
+    m[1] = new Machine("Yoda", 0.1, 0.1);
+    m[2] = new Machine("Yoda", 0.1, 0.1);
+    m[3] = new Machine("Yoda", 0.1, 0.1);
+    m[4] = new Machine("Yoda", 0.1, 0.1);
 
     Scanner sc = new Scanner(System.in);
     String cmd;
