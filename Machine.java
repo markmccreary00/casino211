@@ -2,8 +2,12 @@ import java.util.*;
 
 public class Machine {
     private String name;
+    
+    //house winnings default value is 0 upon Machine initialization
     private double house = 0;
     private double pot, payout;
+
+    //controls behavior of quarter going to either pot or house
     boolean toPot = false;
 
     public Machine(String n, double h, double p) {
