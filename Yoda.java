@@ -10,12 +10,15 @@ public class Yoda extends Machine {
      * getName()    -- super 
      */
     private String syms = "ⓣⓗ";
+    private double probability;
 
-    public Yoda(String name, double house, double payout){
+    public Yoda(String name, double house, double payout, double probability){
         super(name,house,payout);
+        this.probability = probability;
+
     }
 
-    public boolean win(double probability){
+    public boolean win(){
 
         System.out.print("Machine:  ");
 
@@ -24,13 +27,18 @@ public class Yoda extends Machine {
         double chance = 1/probability; 
         int win = rand.nextInt((int)chance) % 4; // 0 or 1, but with probabilty given
 
+        // get payout
+        double payout = play(true);
          // print win/loss messages
-        if(win != 0){
+        if(payout == -1){
+            System.out.println("Sorry, but this machine is out of service.");
+            return false;
+        }
+        else if(win != 0){
             System.out.println(syms.charAt(0) + "  There is no win, only lose or lose not. Lost you did");
             return false;
         }
         else{
-            double payout = play(true);
             System.out.println(syms.charAt(1) + "  Strong is the Force in this one. Won you have. --> $" + payout);
         }
         return true;
