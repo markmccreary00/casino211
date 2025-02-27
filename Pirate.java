@@ -4,7 +4,7 @@ public class Pirate extends Machine {
 
     private String syms = "♈✋⛵";
 
-    public boolean win(double payout){
+    public boolean win(){
 
         System.out.print("Machine:   ");
 
@@ -24,6 +24,7 @@ public class Pirate extends Machine {
                 win = false;
         }
 
+        double payout = play(win);
         // print win/loss message 
         if(win)
             System.out.println(" You've won and taken me treasure, scaliwag! --> $" + payout);
