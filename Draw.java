@@ -1,5 +1,6 @@
 public class Draw{
 
+  // This works
   public static void show(Machine[] m, int pos){
     // Print out the boxes
     for(int i = 0; i < 5; i ++){
@@ -33,6 +34,7 @@ public class Draw{
   }
 
   public static void main(String[] args){
+    /*
     Machine[] m = new Machine[5];
     m[0] = new Machine("Yoda", 0.1, 0.1);
     m[1] = new Machine("Yoda", 0.1, 0.1);
@@ -40,5 +42,6 @@ public class Draw{
     m[3] = new Machine("Yoda", 0.1, 0.1);
     m[4] = new Machine("Yoda", 0.1, 0.1);
     show(m, 4);
+    */
   }
 }

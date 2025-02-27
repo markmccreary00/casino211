@@ -25,16 +25,17 @@ public class Manager {
       pos ++;
       if(pos >= m.length) pos = 0;
     }else if(comm.equals("play")){
+      // TODO: make sure the play works
       if(m[pos].inService()){
-	playerMoney += m[pos].play();
-	playerMoney -= 0.25;
+	//playerMoney += m[pos].play();
+	//playerMoney -= 0.25;
       }
     }else if(comm.equals("*report")){
       for(int i = 0 ; i < m.length; i ++){
 	m[i].report();
       }
     }else if(comm.equals("quit")){
-
+      
     }else{
       System.out.println("Invalid Command");
     }
