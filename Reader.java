@@ -4,9 +4,7 @@ import java.util.*;
 
 public class Reader{
 
-
-
-    public static Machines[] machines(String fname){
+    public static Machine[] machines(String fname){
 
         Scanner sc = null;
         try { sc = new Scanner(new FileReader(fname)); } 
@@ -15,11 +13,13 @@ public class Reader{
         // get number of machines 
         int num = sc.next().length();
 
-        Machines[] machines = new Machines[num];
+        Machine[] machines = new Machine[num];
 
-        // read in data and instantiate for each machine
+
         for(int i = 0; i < num; i++){
-            // if yoda, read in extra thing for probability 
+	  // TODO: read in data and instantiate for each machine
+	  machines[i] = new Yoda("Yoda", 0.5, 8, 2);
+	  // if yoda, read in extra thing for probability 
         }
 
         return machines; 

@@ -5,8 +5,8 @@ public class Lab08{
   // This class works
   public static void main(String[] args){
     Scanner sc = new Scanner(System.in);
-    double playerMoney = sc.nextDouble();
-    String fname = sc.next();
+    double playerMoney = Double.parseDouble(args[0]);
+    String fname = args[1];
     String cmd;
     Manager man = new Manager(Reader.machines(fname), playerMoney);
     do{

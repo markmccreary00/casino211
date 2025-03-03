@@ -46,8 +46,8 @@ public class Yoda extends Machine {
 
     public static void main(String[] args){
         
-        Yoda y = new Yoda(" ", 0.0, 2.0 );
-        y.win(0.5);
+      //Yoda y = new Yoda(" ", 0.0, 2.0 );
+	// y.win(0.5);
     }
 
 }

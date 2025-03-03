@@ -42,7 +42,7 @@ public class Machine {
     }
 
     public String getName() {
-        return "name";
+        return this.name;
     }
 
     public boolean inService() {
