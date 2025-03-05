@@ -42,9 +42,8 @@ public class Machine {
             pot -= payout;
             return payout;
         } else {
-            return 0;
+            return -0.25;
         }
-
     }
 
     // simple name getter
@@ -55,6 +54,7 @@ public class Machine {
     // method for checking machine operability state
     public boolean inService() {
         if (pot < payout) {
+            System.out.println("pot is: " + pot + " and payout is: " + payout);
             return false;
         } else {
             return true;
@@ -64,5 +64,9 @@ public class Machine {
     public String report() {
         double net = house + pot - initialPot;
         return String.format("casino: $%.2f, pot: $%.2f, net: $%.2f", house, pot, net);
+    }
+
+    public boolean win(){
+        return true;
     }
 }

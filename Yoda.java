@@ -12,7 +12,7 @@ public class Yoda extends Machine {
     private String syms = "ⓣⓗ";
     private double probability;
 
-    public Yoda(String name, double house, double payout, double probability){
+    public Yoda(String name, double probability, double house, double payout){
         super(name,house,payout);
         this.probability = probability;
 
@@ -25,7 +25,7 @@ public class Yoda extends Machine {
         Random rand = new Random(System.currentTimeMillis());
 
         double chance = 1/probability; 
-        int win = rand.nextInt((int)chance) % 4; // 0 or 1, but with probabilty given
+        int win = rand.nextInt((int)chance) % 2; // 0 or 1, but with probabilty given
 
         // get payout
         double payout = play(true);
@@ -46,7 +46,9 @@ public class Yoda extends Machine {
 
     public static void main(String[] args){
         
-      //Yoda y = new Yoda(" ", 0.0, 2.0 );
+      Yoda y = new Yoda(" ", 0.0, 2.0, .5 );
+      y.win();
+      
 	// y.win(0.5);
     }
 

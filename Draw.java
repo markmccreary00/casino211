@@ -2,33 +2,34 @@ public class Draw{
 
   // This works
   public static void show(Machine[] m, int pos){
+
     // Print out the boxes
     for(int i = 0; i < 5; i ++){
       for(int j = 0; j < m.length; j ++){
-	char c = (j == pos ? '#' : '-');
-	if(i == 0 || i == 4){
-	  for(int k = 0; k < 10; k ++){
-	    System.out.print(c);
+		char c = (j == pos ? '#' : '-');
+		if(i == 0 || i == 4){
+	  		for(int k = 0; k < 10; k ++){
+	    		System.out.print(c);
+	  		}
+	  		System.out.print("  ");
+		}
+		if(i == 1 || i == 3)
+	  		System.out.print(c + "        " + c + "  ");
+		
+		if(i == 2){
+	  		String name = m[j].getName();
+	  		System.out.print(c);
+	  		int n = (8 - name.length()) / 2;
+	  		for(int k = 0; k < n; k ++){
+	    		System.out.print(' ');
+	  		}
+	  		System.out.print(name);
+	  		for(int k = 0; k < n; k ++){
+	    		System.out.print(' ');
+	  		}
+	  		System.out.print(c + "  ");
+		}	
 	  }
-	  System.out.print("  ");
-	}
-	if(i == 1 || i == 3){
-	  System.out.print(c + "        " + c + "  ");
-	}
-	if(i == 2){
-	  String name = m[j].getName();
-	  System.out.print(c);
-	  int n = (8 - name.length()) / 2;
-	  for(int k = 0; k < n; k ++){
-	    System.out.print(' ');
-	  }
-	  System.out.print(name);
-	  for(int k = 0; k < n; k ++){
-	    System.out.print(' ');
-	  }
-	  System.out.print(c + "  ");
-	}
-      }
       System.out.println();
     }
   }
