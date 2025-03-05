@@ -13,13 +13,20 @@ public class Reader{
         // get number of machines 
         int num = sc.next().length();
 
+        // create array of that many machines
         Machine[] machines = new Machine[num];
 
 
         for(int i = 0; i < num; i++){
-	  // TODO: read in data and instantiate for each machine
-	  machines[i] = new Yoda("Yoda", 0.5, 8, 2);
-	  // if yoda, read in extra thing for probability 
+	        // TODO: read in data and instantiate for each machine
+
+            String type = sc.next();
+
+            // if yoda, read in extra thing for probability
+            if(type.equals("yoda"))
+	            machines[i] = new Yoda("Yoda", sc.nextDouble(), sc.nextDouble(), sc.nextDouble()); 
+            else
+                machines[i] = new Pirate("Pirate", sc.nextDouble(), sc.nextDouble());
         }
 
         return machines; 
