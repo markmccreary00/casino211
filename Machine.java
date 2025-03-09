@@ -1,4 +1,6 @@
 public class Machine {
+    protected static Random rand = new Random(System.currentTimeMillis());
+
     private String name;
 
     // house winnings default value is 0 upon Machine initialization
@@ -26,11 +28,7 @@ public class Machine {
      * return value > 0 correlates to amount winnings
      * return value == -1 correlates to out of service machine
      */
-    public double play(boolean result) {
-        if(!inService()){
-            return -1;
-        }
-        
+    protected double accounting(boolean result) {
         if (toPot) {
             pot += 0.25;
         } else {
@@ -42,7 +40,7 @@ public class Machine {
             pot -= payout;
             return payout;
         } else {
-            return -0.25;
+            return 0;
         }
     }
 
@@ -66,7 +64,7 @@ public class Machine {
         return String.format("casino: $%.2f, pot: $%.2f, net: $%.2f", house, pot, net);
     }
 
-    public boolean win(){
-        return true;
+    public double play(){
+        return 0;
     }
 }

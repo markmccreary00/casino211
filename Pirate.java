@@ -8,35 +8,36 @@ public class Pirate extends Machine {
         super(name,house,payout);
     }
 
-    public boolean win(){
-
-        System.out.print("Machine:   ");
+    public double win(){
 
         // create array of my actual syms
         int[] mySyms = {0,0,0};
         boolean win = true;
 
-        Random rand = new Random(System.currentTimeMillis());
+        boolean winflag = Machine.rand.nextDouble() <= 0.5;
+
+        // get payout
+        double payout = accounting(winflag);
 
         // print the icons, and check for win/loss
         for(int i = 0; i < 3; i++){
             int x = mySyms[i] = rand.nextInt(2);
             System.out.print(syms.charAt(x) + " ");
 
-            //check if still in the game 
+            //check if still in the game
             if(i > 0 && mySyms[i] != mySyms[i - 1])
                 win = false;
         }
 
-        double payout = play(win);
-        // print win/loss message 
+        // print win/loss message
+        System.out.print("Machine:   ");
         if(win)
             System.out.println(" You've won and taken me treasure, scaliwag! --> $" + payout);
         else    
             System.out.println(" Arrrr, you lost, matey!");
 
-        // return whether we won or lost 
-        return win;
+        // return whether we won or lost
+        return payout;
     }
 
     public static void main(String[] args){
